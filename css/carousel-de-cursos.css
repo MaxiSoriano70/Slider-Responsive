@@ -1,0 +1,233 @@
+:root {
+    --color-1: #456584;
+    --color-2: #3e5975;
+    --color-3: #6e94b9;
+    --color-4: #b1d1f1;
+    --color-5: #f09510;
+    --color-6: #f9d36c;
+    --color-7: #e38354;
+    --color-8: #e89d6d;
+    --color-fondo: #eaeef4;
+    --color-complementario-I : #E5507A;
+    --color-complementario-II : #ef7d9a;
+    --color-success: #28a745;
+    --color-warning: #ffc107;
+    --color-danger: #dc3545;
+    --color-blanco: #fff;
+    --color-negro: #000;
+}
+
+.carousel{
+    width: 100%;
+}
+
+.carousel h2{
+    text-align: center;
+    padding: 20px 10px;
+    font-weight: bold;
+}
+
+.carousel-list{
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 10px 0px;
+    margin: 0px auto;
+    max-width: 100vw;
+    overflow: hidden;
+}
+
+.carrusel-track{
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    transition: .5s ease-in-out;
+}
+
+.card-curso-carrusel{
+    position: relative;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 3;
+    box-shadow: 2px 3px 5px rgba(73, 69, 52, 0.4);
+    margin: 10px;
+}
+
+.card-curso-carrusel:hover .card-data-curso-carrusel {
+    transition: 0.5s;
+    bottom: 0;
+}
+
+.card-img-carrusel{
+    width: 300px;
+    height: 230px;
+    object-fit: cover;
+    aspect-ratio: 16/9;
+}
+
+.card-data-curso-carrusel{
+    position: absolute;
+    width: 100%;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    padding: 10px;
+    bottom: -160px;
+    z-index: 2;
+}
+
+.card-data-curso-carrusel .data-head-carrusel{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.data-head-carrusel .ver-ahora-carrusel{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.data-head-carrusel .ver-ahora-carrusel a{
+    text-decoration: none;
+    font-size: 2rem;
+    color: var(--color-1);
+}
+
+.data-head-carrusel .ver-ahora-carrusel a:hover{
+    color: var(--color-complementario-I);
+    transition: 0.2s linear;
+}
+
+.data-head-carrusel .ver-ahora-carrusel p{
+    margin: 0 0 0 10px;
+    font-size: 1.2rem;
+    color: black;
+}
+
+.data-head-carrusel .data-more{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.data-head-carrusel .data-more a{
+    text-decoration: none;
+    font-size: 1.8rem;
+    color: var(--color-1);
+    margin: 0 0 0 7.5px;
+}
+
+.data-head-carrusel .data-more a:hover{
+    color: var(--color-complementario-I);
+    transition: 0.2s linear;
+}
+
+.card-data-curso-carrusel .data-body-carrusel{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+}
+
+.data-body-carrusel .body-description{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.data-body-carrusel .body-description p{
+    margin: 0;
+}
+
+.carrusel-arrow {
+    border-radius: 30px;
+    background-color: var(--color-1);
+    position: absolute;
+    z-index: 4;
+    width: 48px;
+    height: 48px;
+    text-align: center;
+    border: 0;
+    cursor: pointer;
+}
+
+.carrusel-arrow:focus{
+    outline: 0;
+}
+
+.carrusel-arrow i{
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--color-blanco);
+}
+
+.carrusel-prev{
+    left: 10px;
+}
+
+.carrusel-next{
+    right: 10px;
+}
+
+@media (max-width:640px){
+    .card-img-carrusel{
+        width: 250px;
+        height: 200px;
+        object-fit: cover;
+        aspect-ratio: 16/9;
+    }
+
+    .card-data-curso-carrusel{
+        height: 130px;
+        bottom: -130px;
+    }
+
+    .data-head-carrusel .ver-ahora-carrusel a{
+        font-size: 1.5rem;
+    }
+
+    .data-head-carrusel .ver-ahora-carrusel p{
+        margin: 0 0 0 10px;
+        font-size: 1rem;
+        color: black;
+    }
+
+    .data-head-carrusel .data-more a{
+        font-size: 1.4rem;
+    }
+
+    .data-body-carrusel h4{
+        font-size: 1.2rem;
+    }
+
+    .data-body-carrusel p{
+        font-size: 0.8rem;
+    }
+
+    .carrusel-arrow {
+        width: 32px;
+        height: 32px;
+    }
+
+    .carrusel-arrow i{
+        font-size: 12px;
+    }
+
+    .carrusel-prev{
+        left: 5px;
+    }
+    .carrusel-next{
+        right: 5px;
+    }
+}

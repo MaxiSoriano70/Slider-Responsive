@@ -1,0 +1,357 @@
+:root {
+    --color-1: #456584;
+    --color-2: #3e5975;
+    --color-3: #6e94b9;
+    --color-4: #b1d1f1;
+    --color-5: #f09510;
+    --color-6: #f9d36c;
+    --color-7: #e38354;
+    --color-8: #e89d6d;
+    --color-fondo: #eaeef4;
+    --color-complementario-I : #E5507A;
+    --color-complementario-II : #ef7d9a;
+    --color-success: #28a745;
+    --color-warning: #ffc107;
+    --color-danger: #dc3545;
+    --color-blanco: #fff;
+    --color-negro: #000;
+}
+
+.cursos-top-4{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 20px 0px;
+}
+
+.card-curso{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 3;
+    box-shadow: 2px 3px 5px rgba(73, 69, 52, 0.4);
+    margin: 10px;
+}
+
+.card-curso:hover .card-data-curso {
+    transition: 0.5s;
+    bottom: 0;
+}
+
+.card-img{
+    width: 300px;
+    height: 230px;
+    object-fit: cover;
+    aspect-ratio: 16/9;
+}
+
+.card-data-curso{
+    position: absolute;
+    width: 100%;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    padding: 10px;
+    bottom: -160px;
+    z-index: 2;
+}
+
+.card-data-curso .data-head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.data-head .ver-ahora{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.data-head .ver-ahora label{
+    text-decoration: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--color-1);
+}
+
+.data-head .ver-ahora label:hover{
+    color: var(--color-complementario-I);
+    transition: 0.2s linear;
+}
+
+.data-head .ver-ahora p{
+    margin: 0 0 0 10px;
+    font-size: 1.2rem;
+    color: black;
+}
+
+.data-head .data-more{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.data-head .data-more a{
+    text-decoration: none;
+    font-size: 1.8rem;
+    color: var(--color-1);
+    margin: 0 0 0 7.5px;
+}
+
+.data-head .data-more a:hover{
+    color: var(--color-complementario-I);
+    transition: 0.2s linear;
+}
+
+.card-data-curso .data-body{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+}
+
+.data-body .body-description{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.data-body .body-description p{
+    margin: 0;
+}
+
+@media (max-width:640px){
+    .card-img{
+        width: 250px;
+        height: 200px;
+        object-fit: cover;
+        aspect-ratio: 16/9;
+    }
+
+    .card-data-curso{
+        height: 130px;
+        bottom: -130px;
+    }
+
+    .data-head .ver-ahora a{
+        font-size: 1.5rem;
+    }
+
+    .data-head .ver-ahora p{
+        margin: 0 0 0 10px;
+        font-size: 1rem;
+        color: black;
+    }
+
+    .data-head .data-more a{
+        font-size: 1.4rem;
+    }
+
+    .data-body h4{
+        font-size: 1.2rem;
+    }
+
+    .data-body p{
+        font-size: 0.8rem;
+    }
+}
+
+#btn-modal{
+    display: none;
+}
+
+.contenedor-modal{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(144,148,150,0.8);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+#btn-modal:checked ~ .contenedor-modal{
+    display: flex;
+    transition: 0.2s linear;
+}
+
+.contenedor-modal .contenido-modal{
+    width: 100%;
+    max-width: 600px;
+    background-color: var(--color-fondo);
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.contenedor-modal .cerrar-modal{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.contenido-modal .header-modal{
+    width: 100%;
+    padding: 10px 15px;
+    background-color: var(--color-1);
+    color: var(--color-blanco);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.contenido-modal .header-modal h4{
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.contenido-modal .header-modal label{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenido-modal .header-modal label i{
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.contenido-modal .cuerpo-de-modal{
+    display: flex;
+    align-items: center ;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px 15px;
+}
+
+.cuerpo-de-modal .curso-descripcion{
+    width: 100%;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.cuerpo-de-modal .curso-descripcion h3{
+    margin: 10px 0;
+}
+
+.cuerpo-de-modal .curso-descripcion p{
+    margin: 0 0 10px 0;
+}
+
+.cuerpo-de-modal .curso-btns{
+    width: 100%;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+}
+
+.curso-btns .btn-modal-carrito{
+    min-width: 130px;
+    height: 40px;
+    color: var(--color-blanco);
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    background: var(--color-1);
+    margin: 0 10px 0 0;
+}
+
+.curso-btns .btn-modal-carrito:hover {
+    background-color: var(--color-2);
+    transition: 0.2s linear;
+}
+
+.curso-btns .btn-modal-carrito:active {
+    background-color: var(--color-2);
+    transition: 0.2s linear;
+}
+
+.curso-btns .btn-modal-suscribirse{
+    min-width: 130px;
+    height: 40px;
+    color: var(--color-blanco);
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    background: var(--color-complementario-I);
+    margin: 0 10px 0 0;
+}
+
+.curso-btns .btn-modal-suscribirse:hover {
+    background-color: var(--color-complementario-II);
+    transition: 0.2s linear;
+}
+
+.curso-btns .btn-modal-suscribirse:active {
+    background-color: var(--color-complementario-II);
+    transition: 0.2s linear;
+}
+
+
+@media screen and (max-height: 555px) {
+    /*MODAL*/
+    .contenedor-modal .contenido-modal{
+        max-height: 350px;
+        overflow-y: scroll;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    /*MODAL*/
+    .contenedor-modal .contenido-modal .header-modal h4{
+        font-size: 1rem;
+        font-weight: bold;
+    }
+
+    .cuerpo-de-modal .curso-descripcion h3{
+        font-size: 1rem;
+    }
+
+    .cuerpo-de-modal .curso-descripcion p{
+        font-size: 0.8rem;
+    }
+
+    .cuerpo-de-modal .curso-btns{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .curso-btns .btn-modal-carrito{
+        font-size: 0.8rem;
+        margin: 0 0 5px 0;
+    }
+
+    .curso-btns .btn-modal-suscribirse{
+        font-size: 0.8rem;
+        margin: 5px 0 0 0;
+    }
+}
